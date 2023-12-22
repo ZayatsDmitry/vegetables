@@ -16,6 +16,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           child: Container(
             width: MediaQuery.of(context).size.width * 0.95,
             height: MediaQuery.of(context).size.height * 0.85,
+            color: Colors.black,
           ),
         ),
       ),
