@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vegatables/data/data.dart';
-import 'package:vegatables/data/start_button_widget.dart';
+import 'package:vegatables/widget/start_button_widget.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -18,7 +18,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     return Scaffold(
       body: SafeArea(
         child: PageView.builder(
-          itemCount: vegetables.length,
+          itemCount: 4,
           itemBuilder: (context, index) {
             return Center(
               child: Container(
@@ -67,6 +67,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
                     currentPage == 3 ? const SizedBox(height: 20,) : Container(),
 
+                  const SizedBox(height: 20,),
+
                     buildPageIndicator()
                   ],
                 ),
@@ -79,6 +81,29 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             });
           },
         ),
+
+      ),
+    );
+  }
+
+  Widget buildPageIndicator() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: List<Widget>.generate(
+        4,
+        (index) {
+          return Container(
+            width: 10,
+            height: 10,
+            margin: const EdgeInsets.symmetric(
+              horizontal: 5,
+            ),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: currentPage == index ? Colors.white : Colors.grey.shade600,
+            ),
+          );
+        },
       ),
     );
   }
