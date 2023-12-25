@@ -66,7 +66,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     currentPage == 3 ? const StartButton() : Container(),
 
                     currentPage == 3 ? const SizedBox(height: 20,) : Container(),
+
                   const SizedBox(height: 20,),
+
                     buildPageIndicator()
                   ],
                 ),
@@ -78,7 +80,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               currentPage = page;
             });
           },
-
         ),
 
       ),
@@ -90,6 +91,28 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: List<Widget>.generate(
         4,
+        (index) {
+          return Container(
+            width: 10,
+            height: 10,
+            margin: const EdgeInsets.symmetric(
+              horizontal: 5,
+            ),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: currentPage == index ? Colors.white : Colors.grey.shade600,
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+  Widget buildPageIndicator() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: List<Widget>.generate(
+        vegetables.length,
         (index) {
           return Container(
             width: 10,
