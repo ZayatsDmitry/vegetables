@@ -15,10 +15,10 @@ class _VegetableListingScreenState extends State<VegetableListingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Vegetables"),
+        title: const Text("Vegetables"),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           horizontal: 4,
         ),
         child: ListView(
@@ -34,7 +34,7 @@ class _VegetableListingScreenState extends State<VegetableListingScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const VegetableDetailsScreen(),
+                          builder: (context) =>  VegetableDetailsScreen(vegetables: vegetable,),
                         ),
                       );
                     },
